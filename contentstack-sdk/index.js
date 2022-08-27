@@ -71,7 +71,7 @@ export default {
       if (categories && categories.length) {
         const categoriesQuery = Stack.ContentType("category")
           .Query()
-          .and(
+          .or(
             ...categories.map((category) => {
               return Stack.ContentType("category")
                 .Query()

@@ -8,7 +8,13 @@ export default function PostItem({ post }: { post?: Post }) {
   if (!post) return <></>;
   return (
     <div className="col-4">
-      <div className="card my-card" style={{ marginTop: "var(--bs-gutter-x)" }}>
+      <div
+        className="card my-card"
+        style={{
+          marginTop: "var(--bs-gutter-x)",
+          borderColor: post.category?.[0].category_color ?? "inherit",
+        }}
+      >
         <img
           src={post.image?.url ?? "https://picsum.photos/200"}
           className="card-img-top"

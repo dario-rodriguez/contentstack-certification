@@ -180,9 +180,12 @@ export interface Welcome {
 }
 
 export interface PostCatalog {
-  /** Show catalog */ show_catalog?: boolean;
+  /** Show catalog */
+  show_catalog?: boolean;
   /** Limit */
   limit?: number;
+  /** Categories */
+  categories?: Category[];
 }
 
 /** Blog homepage */

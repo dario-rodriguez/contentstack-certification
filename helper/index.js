@@ -1,13 +1,4 @@
 import Stack from "../contentstack-sdk";
-import { addEditableTags } from "@contentstack/utils";
-import getConfig from "next/config";
-
-const { publicRuntimeConfig } = getConfig();
-const envConfig = process.env.CONTENTSTACK_API_KEY
-  ? process.env
-  : publicRuntimeConfig;
-
-const liveEdit = envConfig.CONTENTSTACK_LIVE_EDIT_TAGS === "true";
 
 export const getHeaderRes = async () => {
   const response = await Stack.getEntry({
@@ -31,7 +22,7 @@ export const getFooterRes = async () => {
 export const getHomepageRes = async () => {
   const response = await Stack.getEntry({
     contentTypeUid: "homepage",
-    referenceFieldPath: undefined,
+    referenceFieldPath: ["components.post_catalog.categories"],
     jsonRtePath: ["components.carousel.images.image_description"],
   });
 
@@ -85,10 +76,12 @@ export const getCategoriesRes = async () => {
 };
 
 export const getPostsByCategoryRes = async (categories, limit) => {
+  console.log(categories);
   const response = await Stack.getPostsByCategory({
     categories,
     jsonRtePath: ["content"],
     limit: limit,
+    referenceFieldPath: ["category"],
   });
 
   return response[0];
