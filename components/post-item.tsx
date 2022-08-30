@@ -18,6 +18,7 @@ export default function PostItem({ post }: { post?: Post }) {
         <img
           src={post.image?.url ?? "https://picsum.photos/200"}
           className="card-img-top"
+          style={{ maxHeight: "275px" }}
           alt="..."
         />
         <div className="card-body">

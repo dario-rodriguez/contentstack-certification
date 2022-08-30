@@ -1,9 +1,9 @@
 import parse from "html-react-parser";
-import Author from "../../components/author";
-import { getPostRes } from "../../helper";
-import Link from "next/link";
-import Rating from "../../components/rating";
 import Head from "next/head";
+import Link from "next/link";
+import Author from "../../components/author";
+import Rating from "../../components/rating";
+import { getPostRes } from "../../helper";
 import { Post as PostType } from "../../typescript/types";
 
 export default function Post(props: { post: PostType }) {

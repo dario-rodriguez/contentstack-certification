@@ -76,7 +76,6 @@ export const getCategoriesRes = async () => {
 };
 
 export const getPostsByCategoryRes = async (categories, limit) => {
-  console.log(categories);
   const response = await Stack.getPostsByCategory({
     categories,
     jsonRtePath: ["content"],
