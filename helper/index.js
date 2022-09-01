@@ -29,16 +29,6 @@ export const getHomepageRes = async () => {
   return response[0][0];
 };
 
-export const getAllPostsRes = async () => {
-  const response = await Stack.getEntry({
-    contentTypeUid: "post",
-    referenceFieldPath: undefined,
-    jsonRtePath: undefined,
-  });
-
-  return response[0];
-};
-
 export const getAnnounceRes = async () => {
   const response = await Stack.getEntry({
     contentTypeUid: "announce",
@@ -62,14 +52,6 @@ export const getPostRes = async (entryUrl) => {
     jsonRtePath: ["content"],
     referenceFieldPath: ["author", "category"],
     entryUrl,
-  });
-
-  return response[0];
-};
-
-export const getCategoriesRes = async () => {
-  const response = await Stack.getEntry({
-    contentTypeUid: "category",
   });
 
   return response[0];

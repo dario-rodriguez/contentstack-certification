@@ -32,7 +32,7 @@ export default function Post(props: { post: PostType }) {
             ) : (
               ""
             )}
-            <span>{parse(props.post.content)}</span>
+            {parse(props.post.content)}
           </div>
           <div className="col-4">
             <div className="row">
