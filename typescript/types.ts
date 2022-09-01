@@ -180,6 +180,7 @@ export interface Welcome {
 }
 
 export interface PostCatalog {
+  title?: string;
   /** Show catalog */
   show_catalog?: boolean;
   /** Limit */

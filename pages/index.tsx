@@ -25,7 +25,13 @@ export default function Home(props: { homepage: Homepage; posts?: Post[] }) {
           component.post_catalog &&
           component.post_catalog.show_catalog
         ) {
-          return <PostList key={idx} posts={props.posts!} />;
+          return (
+            <PostList
+              key={idx}
+              posts={props.posts!}
+              title={component.post_catalog.title}
+            />
+          );
         }
       })}
     </>
